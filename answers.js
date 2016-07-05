@@ -149,17 +149,144 @@ function facto(num) {
 
 function longestWord(phrase) {
     var words = phrase.split(" ");
-    var longest = words[0];
-    var i = 1;
+    var longest = "";
+    var i = 0;
     while (i < words.length) {
-        if (words[i].length > words[i-1].length){
+        if (words[i].length > longest.length){
             longest = words[i];
-            i += 1;
         }
-        else {
-            i += 1;
-        }
+        i++;
     }
     return longest;
 }
-console.log(longestWord("My name is Maxime Martin"));
+//console.log(longestWord("My name is Maxime Martin"));
+
+//Exercice #11
+//Write a function that takes a phrase, and returns
+//the same phrase with every word capitalized. For 
+//example, if you pass your function "hello world", 
+//it should return “Hello World” and if you pass it 
+//“HELLO WORLD” or even "HeLLo WoRLD", it will also 
+//return "Hello World"
+
+function capital(phrase){
+    var words = phrase.split(" ");
+    var i = 0;
+    var phraseCapitalized = "";
+    while (i < words.length) {
+       var word = words[i];
+       var wordLowerCase = word.toLowerCase();
+       var wordCapital = wordLowerCase.charAt(0).toUpperCase() + wordLowerCase.slice(1);
+       phraseCapitalized += wordCapital + " ";
+       i++;
+    }
+    return phraseCapitalized;
+}
+//console.log(capital("I dONT unDerStand capitalizATION"));
+
+//Exercice #12
+//Write a function that takes an array and returns 
+//the largest number of the array. Test your function
+//on a few inputs
+
+function largestNumber(array){
+    var i = 1;
+    var largestNum = array[0];
+    
+    while (i < array.length) {
+       if (array[i] > array[i-1]) {
+           largestNum = array[i];
+           i ++;
+       }
+       else {
+           i ++;
+       }
+    }
+    return largestNum;
+}
+//console.log(largestNumber([3,1,12,4]));
+
+//Exercice #13
+//Write a function that takes an array, and returns 
+//a filtered array. The filtered array should only 
+//contain the truthy values from the initial array.
+//Hint: there is an array method called filter that 
+//can help you with this :)
+
+
+function filteredArray(array){
+    var i = 0;
+    var filterArray = [];
+    while (i < array.length) {
+        if (Boolean(array[i]) === true) {
+            filterArray.push(array[i]);
+            i ++;
+        }
+        else {
+            i++
+        }
+    }
+    return filterArray;
+}
+//console.log(filteredArray([true, false, undefined,null,"string",123,1.34,-1,1,0]));
+
+//Exercice #14
+//Write a function that takes an array of numbers, and 
+//returns the sum of all the numbers in the array.
+
+function sumArray(array){
+    var i = 0;
+    var sum = 0;
+    while (i < array.length) {
+        sum += array[i];
+        i++;
+    }
+     return sum;
+ }
+// console.log(sumArray([3,4,54,3]));
+
+//Exercice #15
+//Write a function that takes two arrays, and
+//returns an array of all elements that are 
+//only in one array. For example, with [1,2,3]
+//and [1,2,4,5] the function should return 
+//[3,4,5]. Test your function on different 
+//inputs. Hint: you should look up array 
+//methods indexOf and slice.
+
+function differenceArray(array1,array2){
+    console.log(array1, array2)
+    var resultArray = [];
+    var i = 0;
+    while(i<array1.length){
+            if (array2.indexOf(array1[i]) >= 0 ){
+                i++;
+            }
+            else {
+                resultArray.push(array1[i]);
+                i++;
+            }
+        
+    }
+    var j = 0;
+    while(j<array2.length){
+            if (array1.indexOf(array2[j]) >= 0){
+                j++;
+            }
+            else {
+                resultArray.push(array2[j]);
+                j++;
+            }
+        
+    }
+    return resultArray;
+}
+
+//console.log(sumArray([1,2,3], [2,4,5]));
+
+//Mini Challenge: write a function that takes an
+//array and a function as arguments. The function
+//should return a new array that maps every 
+//element of the input array by passing it 
+//through the function you received. You are 
+//not allowed to use Array.map for this challenge, otherwise it would be too easy :)
