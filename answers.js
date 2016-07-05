@@ -80,4 +80,35 @@ function operationTwoNumbers(num1,num2,operator) {
         default: return 0;
     }
 }
-console.log(operationTwoNumbers(2,4,"add"));
+//console.log(operationTwoNumbers(2,4,"add"));
+
+//Exercice #7
+//Write a function that takes a string and a 
+//number, and returns the string repeated that
+//many number of times.
+
+function stringRepeated(str,num) {
+    for (var i = 0;i < num;i++){
+         console.log(str);
+    }
+}
+//stringRepeated("Max",4);
+
+//Exercice #8
+//Write a function that takes a string, 
+//and returns the reverse of that string. 
+//For example, if you pass the function the 
+//string “hello”, it should return “olleh”. 
+//Test your function on a few inputs, including 
+//the empty string
+
+function reverse(str) {
+    var reverseword ="";
+    var i = str.length-1;
+    while(i > -1) {
+         reverseword += str[i];
+         i = i - 1;
+    }
+    return reverseword;
+}
+console.log(reverse("Hello"));
