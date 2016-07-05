@@ -289,4 +289,16 @@ function differenceArray(array1,array2){
 //should return a new array that maps every 
 //element of the input array by passing it 
 //through the function you received. You are 
-//not allowed to use Array.map for this challenge, otherwise it would be too easy :)
+//not allowed to use Array.map for this challenge, 
+//otherwise it would be too easy :)
+
+function miniChallenge(array,funct){
+    var i = 0;
+    var resultArray = [];
+    while (i < array.length) {
+        resultArray.push(funct(array[i]));
+        i++;
+    }
+     return resultArray;
+ }
+console.log(miniChallenge(["Max","Jess","Jared"],firstCharacter));
