@@ -35,13 +35,49 @@ function stringCharacter(string,position) {
 
 //Exercice #4
 //Write a function that takes two numbers and 
-//adds them together. Test your function on a 
-//few inputs. Write in the comments what happens
-//when you pass something other than a number to 
-//your function
+//adds them together. 
 
 function addition(num1,num2) {
     return num1 + num2;
 }
-console.log(addition(4,3));
-console.log(addition("jk",3));
+// console.log(addition(4,3));
+// console.log(addition("jk",3));
+
+//If you pass a string, the function is going to return stringnum1
+
+//Exercice #5
+//Write a function that takes two numbers
+//and multiplies them together.
+
+function multiple(num1,num2) {
+    return num1 * num2;
+}
+//console.log(multiple(4,3));
+//console.log(multiple("jk",3));
+
+//If you pass a string to the parameters, it will return "NaN"
+
+//Exercice #6
+//Write a function that takes two numbers and 
+//a string. If the string is ‘add’, then return 
+//the sum of the numbers. If the string is 
+//‘subtract’, return the difference. If the 
+//string is ‘mult’, return the product. If the 
+//string is ‘div’, return the ratio. Otherwise
+//return 0
+
+function operationTwoNumbers(num1,num2,operator) {
+    switch (operator)
+    {
+        case 'add' : 
+            return num1+num2;
+        case 'subtract' :
+            return num1-num2;
+        case 'mult' :
+            return num1*num2;
+        case 'div' :
+            return num1/num2;
+        default: return 0;
+    }
+}
+console.log(operationTwoNumbers(2,4,"add"));
