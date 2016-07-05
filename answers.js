@@ -111,4 +111,55 @@ function reverse(str) {
     }
     return reverseword;
 }
-console.log(reverse("Hello"));
+//console.log(reverse("Hello"));
+
+//Exercice #9
+//Write a function that takes a number and 
+//returns the factorial of a number. The 
+//factorial of 5 is 5x4x3x2x1. The factorial 
+//of 0 is 1. Test your input on a few numbers, 
+//including negative numbers.
+
+function facto(num) {
+    if (num >= 1) {
+        var i = num;
+        var answer = num;
+        while(i > 1) {
+             answer = answer * (i-1);
+             i -= 1;
+        }
+        return answer;
+    }
+    else { 
+        if (num === 0 ){
+            return 1;
+        }
+        else {
+            return "undefined";
+        }
+    }
+}
+//console.log (facto(-4));
+
+//Exercice #10
+//Write a function that takes a phrase as a 
+//string, and returns the longest word in that 
+//phrase. If the phrase contains more than one 
+//such word, return the first occurrence
+
+function longestWord(phrase) {
+    var words = phrase.split(" ");
+    var longest = words[0];
+    var i = 1;
+    while (i < words.length) {
+        if (words[i].length > words[i-1].length){
+            longest = words[i];
+            i += 1;
+        }
+        else {
+            i += 1;
+        }
+    }
+    return longest;
+}
+console.log(longestWord("My name is Maxime Martin"));
